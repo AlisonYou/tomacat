@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="gridPane" alignment="center" hgap="10" prefHeight="250.0" prefWidth="455.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="250.0" prefWidth="455.0">
+         <children>
+            <Button fx:id="get" layoutX="110.0" layoutY="202.0" mnemonicParsing="false" onAction="#showURL" prefHeight="24.0" prefWidth="73.0" text="get" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextArea fx:id="showStatus" layoutX="288.0" layoutY="50.0" prefHeight="165.0" prefWidth="160.0" promptText="程序运行状态" wrapText="true" />
+            <TextField fx:id="port" layoutX="97.0" layoutY="35.0" onAction="#getURL" onKeyReleased="#getURL" prefHeight="30.0" prefWidth="98.0" promptText="端口号" />
+            <TextField fx:id="path" layoutX="92.0" layoutY="69.0" onAction="#getURL" onKeyReleased="#getURL" prefHeight="30.0" prefWidth="183.0" promptText="项目相对路径" />
+            <Label alignment="CENTER" layoutX="15.0" layoutY="35.0" prefHeight="30.0" prefWidth="65.0" text="PORT" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="5.0" layoutY="74.0" prefHeight="20.0" prefWidth="85.0" text="Relative Path" />
+            <Button fx:id="start" layoutX="15.0" layoutY="202.0" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="85.0" text="start up" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="open" layoutX="193.0" layoutY="202.0" mnemonicParsing="false" onAction="#open" prefHeight="30.0" prefWidth="73.0" text="oepn">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="205.0" layoutY="40.0" prefHeight="20.0" prefWidth="73.0" text="0 ~ 65535" />
+            <TextArea fx:id="showUrl" layoutX="15.0" layoutY="107.0" prefHeight="30.0" prefWidth="264.0" promptText="此处动态显示路径" wrapText="true" />
+            <Label layoutX="336.0" layoutY="25.0" prefHeight="20.0" prefWidth="32.0" text="状态">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Button fx:id="clear" layoutX="378.0" layoutY="24.0" mnemonicParsing="false" onAction="#clearStatus" prefHeight="23.0" prefWidth="49.0" text="清除">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <MenuBar fx:id="menuBar" layoutX="-3.0" layoutY="1.0" prefHeight="23.0" prefWidth="223.0" style="-fx-background-color: #A94DC1;">
+              <menus>
+                <Menu mnemonicParsing="false" text="设置">
+                  <items>
+                        <CheckMenuItem fx:id="setSimpleMode" mnemonicParsing="false" onAction="#setSimpleMode" text="简洁模式" />
+                    <MenuItem mnemonicParsing="false" onAction="#setStartUpPath" text="startup路径" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="关于">
+                  <items>
+                        <MenuItem fx:id="author" mnemonicParsing="false" onAction="#aboutAuthor" text="作者" />
+                        <MenuItem fx:id="code" mnemonicParsing="false" onAction="#myDemo" text="源码">
+                           <graphic>
+                              <Hyperlink />
+                           </graphic>
+                        </MenuItem>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ColorPicker fx:id="colorPicker" layoutX="170.0" layoutY="3.0" onAction="#changeColor" />
+            <Label layoutX="273.0" layoutY="7.0" prefHeight="20.0" prefWidth="49.0" text="自选颜色" />
+         </children>
+      </Pane>
+   </children>
+   <stylesheets>
+      <URL value="@button.css" />
+      <URL value="@body.css" />
+   </stylesheets>
+</GridPane>

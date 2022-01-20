@@ -1,0 +1,7 @@
+Button{
+    -fx-border-radius: 10px;
+    -fx-background-color: aquamarine;
+}
+Button:hover{
+    -fx-background-color: tomato;
+}
